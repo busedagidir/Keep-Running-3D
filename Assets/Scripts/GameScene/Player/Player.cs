@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     private float _startHealth = 100f;
     private float _currentHealth = 100f;
     public float _sawDamage = 10f;
-    public float _rockDamage = 5f;
     private float _collect = 5f;
     private float _lavaDamage = 20f;
 
@@ -28,11 +27,6 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "CircularSaw")
         {
             TakeDamage(_sawDamage);
-            Debug.Log(_currentHealth);
-        }
-        else if(collision.gameObject.tag == "Rock")
-        {
-            TakeDamage(_rockDamage);
             Debug.Log(_currentHealth);
         }
         
@@ -59,11 +53,12 @@ public class Player : MonoBehaviour
         if(_currentHealth > 0)
         {
             _currentHealth -= damage;
+            _healthBar.SetHealth(_currentHealth);
         }
 
-        _healthBar.SetHealth(_currentHealth);
+        
 
-        if (_currentHealth == 0)
+        if (_currentHealth <= 0)
         {
             Debug.Log("You died");
             //die screen gelsin
