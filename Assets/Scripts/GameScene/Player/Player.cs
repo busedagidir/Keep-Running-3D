@@ -10,8 +10,11 @@ public class Player : MonoBehaviour
 
     private float _startHealth = 100f;
     private float _currentHealth = 100f;
-    public float _damage = 10f;
-    
+    public float _sawDamage = 10f;
+    public float _rockDamage = 5f;
+    private float _collect = 5f;
+    private float _lavaDamage = 20f;
+
     public HealthBar _healthBar;
 
     void Start()
@@ -24,17 +27,33 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "CircularSaw")
         {
-            TakeDamage(_damage);
+            TakeDamage(_sawDamage);
             Debug.Log(_currentHealth);
         }
         else if(collision.gameObject.tag == "Rock")
         {
-            TakeDamage(_damage);
+            TakeDamage(_rockDamage);
+            Debug.Log(_currentHealth);
+        }
+        
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Coin")
+        {
+            Debug.Log("coin collected");
+            CollectHealth(_collect);
+        }
+
+        if (other.gameObject.tag == "Lava")
+        {
+            TakeDamage(_lavaDamage);
             Debug.Log(_currentHealth);
         }
     }
 
-    //farklı farklı engeller için takedamage fıonk olusturi parametre farklı olacak sekilde
+    //farklı farklı engeller için takedamage fonk olusturi parametre farklı olacak sekilde
     public void TakeDamage(float damage)
     {
         if(_currentHealth > 0)
@@ -49,8 +68,12 @@ public class Player : MonoBehaviour
             Debug.Log("You died");
             //die screen gelsin
         }
+    }
 
-       
+    public void CollectHealth(float coin)
+    {
+        _currentHealth += coin;
+        _healthBar.SetHealth(_currentHealth);
     }
 
 
