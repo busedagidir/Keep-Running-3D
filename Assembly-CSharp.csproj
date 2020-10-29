@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{04BA247F-F129-9B29-455B-391DD425B160}</ProjectGuid>
+    <ProjectGuid>{7835B37B-50E3-0307-E00F-6053B96AC758}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -71,8 +71,8 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
-    <Compile Include="Assets\Scripts\FinishScene\FinishSceneManager.cs" />
     <Compile Include="Assets\Scripts\GameScene\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\GameScene\Coins\CoinPickup.cs" />
     <Compile Include="Assets\Scripts\GameScene\Game\CheckPointController.cs" />
     <Compile Include="Assets\Scripts\GameScene\Game\CheckPointManager.cs" />
     <Compile Include="Assets\Scripts\GameScene\Game\GameManager.cs" />
@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\GameScene\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\GameScene\Trap\CircularSaw.cs" />
     <Compile Include="Assets\Scripts\GameScene\Trap\DeathBorder.cs" />
+    <Compile Include="Assets\Scripts\GameScene\Trap\Lava.cs" />
     <Compile Include="Assets\Scripts\GameScene\Trap\Spinner.cs" />
     <Compile Include="Assets\Scripts\GameScene\Trap\SpinnerArms.cs" />
     <Compile Include="Assets\Scripts\GameScene\Trap\TrapController.cs" />
@@ -309,7 +310,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>C:/Users/htc_9/OneDrive/Masaüstü/GroupProje/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>C:/Users/tekin/Desktop/Team9-test/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -672,36 +673,36 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/htc_9/OneDrive/Masaüstü/GroupProje/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/tekin/Desktop/Team9-test/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/htc_9/OneDrive/Masaüstü/GroupProje/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/tekin/Desktop/Team9-test/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/htc_9/OneDrive/Masaüstü/GroupProje/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/tekin/Desktop/Team9-test/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/htc_9/OneDrive/Masaüstü/GroupProje/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/tekin/Desktop/Team9-test/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/htc_9/OneDrive/Masaüstü/GroupProje/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/tekin/Desktop/Team9-test/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/htc_9/OneDrive/Masaüstü/GroupProje/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/tekin/Desktop/Team9-test/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/htc_9/OneDrive/Masaüstü/GroupProje/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/tekin/Desktop/Team9-test/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/htc_9/OneDrive/Masaüstü/GroupProje/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/tekin/Desktop/Team9-test/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/htc_9/OneDrive/Masaüstü/GroupProje/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/tekin/Desktop/Team9-test/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{AE227AC8-64EC-01C6-90C7-07E91CBB1940}</Project>
+      <Project>{2355AFC3-013F-3F92-456D-E9B5C5612799}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
