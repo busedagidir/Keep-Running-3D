@@ -77,7 +77,6 @@
      <Compile Include="Assets\Scripts\GameScene\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\GameScene\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\GameScene\Trap\CircularSaw.cs" />
-     <Compile Include="Assets\Scripts\GameScene\Trap\DeathBorder.cs" />
      <Compile Include="Assets\Scripts\GameScene\Trap\Lava.cs" />
      <Compile Include="Assets\Scripts\GameScene\Trap\Spinner.cs" />
      <Compile Include="Assets\Scripts\GameScene\Trap\SpinnerArms.cs" />

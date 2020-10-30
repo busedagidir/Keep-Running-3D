@@ -32,15 +32,16 @@ public class PlayerMovement : MonoBehaviour
         #region Düz Hareket
         //Devamlı ileri gitme
         _playerRB.AddForce(0, 0, _forwardSpeed);
+        
 
         //Dokunma varsa
         if (Input.touchCount > 0 && _playerRB.velocity.z >= 10f) // Tersi kuvvet olduğu için hızımız belli bir seviyenin altına düşmesin.
         {
-            _playerRB.AddForce(0, 0, -(_forwardSpeed * 3)); // 3 katı kuvvet uygun geldi malum hızımız devamlı artıyor force uyguladığımız için :)
+            _playerRB.AddForce(0, 0, -(_forwardSpeed * 5)); // 3 katı kuvvet uygun geldi malum hızımız devamlı artıyor force uyguladığımız için :)
         }
 
         //Hızımızı bilelim
-        //Debug.Log(_playerRB.velocity);
+        Debug.Log(_playerRB.velocity);
 
         //Düştüğünde yenilesin
         if (_playerRB.position.y <= -25f)

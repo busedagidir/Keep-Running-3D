@@ -8,6 +8,7 @@ TagManager:
   - Rock
   - Coin
   - Lava
+  - Wall
   layers:
   - Default
   - TransparentFX

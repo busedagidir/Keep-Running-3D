@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class PathManager : MonoBehaviour
 {
-
     public GameObject[] pathPrefabs;
     public float zSpawn = 0; //spawn edeceğimiz konum için
     public float pathLenght = 300;
@@ -12,11 +10,9 @@ public class PathManager : MonoBehaviour
 
     private int numberOfPaths = 7;
     private List<GameObject> activePaths = new List<GameObject>();
-
-
+    
     void Start()
     {
-        
         for(int i = 1; i < numberOfPaths; i++)
         {
             if(i == 0)

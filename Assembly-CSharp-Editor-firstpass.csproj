@@ -265,11 +265,11 @@
  <Reference Include="UnityEditor.iOS.Extensions">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="DOTween">
- <HintPath>C:/Users/Buse/Unity Projects/projeDeneme05/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
- </Reference>
  <Reference Include="DOTweenEditor">
  <HintPath>C:/Users/Buse/Unity Projects/projeDeneme05/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>C:/Users/Buse/Unity Projects/projeDeneme05/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>C:/Users/Buse/Unity Projects/projeDeneme05/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>

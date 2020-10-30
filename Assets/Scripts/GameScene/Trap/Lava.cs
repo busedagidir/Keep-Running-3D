@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
@@ -9,7 +7,6 @@ public class Lava : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             Debug.Log(other.gameObject + " floor is lava");
-
         }
     }
 }
