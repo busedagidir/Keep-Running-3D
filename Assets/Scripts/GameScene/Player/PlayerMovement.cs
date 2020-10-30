@@ -5,8 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody _playerRB;
 
-    private float _sideSpeed = 90.0f;
-    private float _forwardSpeed = 60.0f;
+    private float _sideSpeed = 50.0f;
+    private float _forwardSpeed = 40.0f;
 
     void FixedUpdate() //Fizikle uğraşacaksan update kullanmican derdi Brackeys :/ RIP
     {
