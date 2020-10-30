@@ -17,13 +17,4 @@ public class SpinnerArms : MonoBehaviour
     {
         transform.Rotate(Vector3.up * speed * Time.deltaTime);
     }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            Debug.Log("player çarka çarptı");
-            rb.AddForce(Vector3.right * 1500f);
-        }
-    }
 }

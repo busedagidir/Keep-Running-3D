@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public static float _currentHealth;
     private float _startHealth = 100f;
-    private float _currentHealth = 100f;
-    public float _sawDamage = 10f;
-    private float _collect = 5f;
+    private float _sawDamage = 10f;
     private float _lavaDamage = 20f;
-
+    private float _collect = 15f;
     public HealthBar _healthBar;
+    public GameObject _coin;
 
     void Start()
     {
@@ -16,14 +17,6 @@ public class Player : MonoBehaviour
         _healthBar.SetMaxHealth(_startHealth);
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "CircularSaw")
-        {
-            TakeDamage(_sawDamage);
-            Debug.Log(_currentHealth);
-        }
-    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -31,11 +24,19 @@ public class Player : MonoBehaviour
         {
             Debug.Log("coin collected");
             CollectHealth(_collect);
+            Destroy(other.gameObject);
+            
         }
 
         if (other.gameObject.tag == "Lava")
         {
             TakeDamage(_lavaDamage);
+            Debug.Log(_currentHealth);
+        }
+
+        if (other.gameObject.tag == "CircularSaw")
+        {
+            TakeDamage(_sawDamage);
             Debug.Log(_currentHealth);
         }
     }
@@ -53,12 +54,21 @@ public class Player : MonoBehaviour
         {
             Debug.Log("You died");
             //die screen gelsin
+            SceneManager.LoadScene("DieScene");
         }
     }
 
     public void CollectHealth(float coin)
     {
-        _currentHealth += coin;
-        _healthBar.SetHealth(_currentHealth);
+        if(_currentHealth > 100)
+        {
+            _currentHealth = 100;
+            _healthBar.SetHealth(_currentHealth);
+        }
+        else
+        {
+            _currentHealth += coin;
+            _healthBar.SetHealth(_currentHealth);
+        }
     }
 }

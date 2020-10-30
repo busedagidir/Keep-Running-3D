@@ -32,6 +32,11 @@ public class PlayerMovement : MonoBehaviour
         #region Düz Hareket
         //Devamlı ileri gitme
         _playerRB.AddForce(0, 0, _forwardSpeed);
+
+        if(Player._currentHealth <= 0)
+        {
+            _playerRB.AddForce(0, 0, 0);
+        }
         
 
         //Dokunma varsa
