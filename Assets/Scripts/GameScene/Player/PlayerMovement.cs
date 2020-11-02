@@ -49,10 +49,11 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(_playerRB.velocity);
 
         //Düştüğünde yenilesin
-        if (_playerRB.position.y <= -25f)
+        /* if (_playerRB.position.y <= -25f)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        */
 
         #endregion
     }

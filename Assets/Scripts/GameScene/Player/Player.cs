@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
@@ -9,7 +10,7 @@ public class Player : MonoBehaviour
     private float _lavaDamage = 20f;
     private float _collect = 15f;
     public HealthBar _healthBar;
-    public GameObject _coin;
+    //public GameObject _coin;
 
     void Start()
     {
@@ -53,7 +54,6 @@ public class Player : MonoBehaviour
         if (_currentHealth <= 0)
         {
             Debug.Log("You died");
-            //die screen gelsin
             SceneManager.LoadScene("DieScene");
         }
     }
@@ -71,4 +71,5 @@ public class Player : MonoBehaviour
             _healthBar.SetHealth(_currentHealth);
         }
     }
+
 }

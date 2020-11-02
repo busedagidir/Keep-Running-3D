@@ -7,6 +7,7 @@ public class PathManager : MonoBehaviour
     public float zSpawn = 0; //spawn edeceğimiz konum için
     public float pathLenght = 300;
     public Transform playerTransform;
+    public float lastPos;
 
     private int numberOfPaths = 7;
     private List<GameObject> activePaths = new List<GameObject>();
@@ -29,6 +30,7 @@ public class PathManager : MonoBehaviour
         if(playerTransform.position.z - 550 > (zSpawn - (numberOfPaths * pathLenght)))
         {
             SpawnPath(Random.Range(0, pathPrefabs.Length));
+            lastPos = zSpawn;
             DeletePath();
         }
     }
@@ -39,6 +41,8 @@ public class PathManager : MonoBehaviour
         activePaths.Add(paths);
         zSpawn += pathLenght;
     }
+    
+    
 
     private void DeletePath()
     {

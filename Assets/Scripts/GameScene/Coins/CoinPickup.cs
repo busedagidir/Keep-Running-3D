@@ -13,7 +13,6 @@ public class CoinPickup : MonoBehaviour
     {
         if(other.gameObject.name == "Player")
         {
-            //setactiveli bişi koy
             Debug.Log(other.gameObject + " picked up the coin");
             
         }

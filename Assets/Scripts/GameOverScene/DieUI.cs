@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+
 
 public class DieUI : MonoBehaviour
 {
@@ -10,7 +12,9 @@ public class DieUI : MonoBehaviour
     void Start()
     {
         FadeOut();
+        
     }
+    
     void FadeOut()
     {
         _startBtn.GetComponent<CanvasGroup>().DOFade(1, 3f);
